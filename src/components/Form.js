@@ -5,13 +5,18 @@ const Form = ({ columnId }) => {
   const { addData, endEditing } = useContext(DrgDrpContext);
   let newTask = useRef(null);
   const handleAddClick = () => {
-    endEditing(columnId);
     if (newTask.value === "") {
       alert("Task cannot be empty!");
     } else {
-      addData(columnId, newTask.value);
+        endEditing(columnId);
+        addData(columnId, newTask.value);
     }
+
   };
+
+  const handleCloseClick = () => {
+      endEditing(columnId);
+  }
 
   return (
     <form className="card-content bg-form swing-in-bottom-bck">
@@ -32,6 +37,7 @@ const Form = ({ columnId }) => {
       >
         Add Task
       </button>
+        <button className="button swing-in-bottom-bck" style={{ marginLeft: "30px" }} onClick={handleCloseClick}>Close</button>
     </form>
   );
 };

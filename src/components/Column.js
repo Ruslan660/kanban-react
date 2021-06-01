@@ -24,7 +24,9 @@ const Column = React.memo(({ tasks, column, isEditing }) => {
             )}
           </Droppable>
         </div>
-        <AddTask columnId={column.id} isEditing={isEditing} />
+        {column.id === "column-1" &&
+          <AddTask columnId={column.id} isEditing={isEditing} />
+        }
       </div>
     </div>
   );

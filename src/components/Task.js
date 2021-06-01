@@ -13,7 +13,6 @@ const Task = React.memo(({ task, index }) => {
           ref={provided.innerRef}
         >
           {task.content}
-          <button className="delete is-pulled-right btn-hover"/>
         </li>
       )}
     </Draggable>
